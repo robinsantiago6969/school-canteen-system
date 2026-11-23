@@ -1,0 +1,645 @@
+
+/* General */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f6f8fb;
+    color: #172033;
+    font-family: 'Nunito', sans-serif;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-weight: 800;
+}
+
+button:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+/* Header */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px max(4vw, 18px);
+    background: #fff;
+    border-bottom: 1px solid #e7ebf1;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 42px;
+}
+
+.brand h1 {
+    font-family: 'Baloo 2';
+    margin: 0;
+    font-size: 28px;
+}
+
+.brand p {
+    margin: 0;
+    color: #718096;
+}
+
+.top nav {
+    display: flex;
+    gap: 8px;
+}
+
+.top nav button {
+    background: #edf2f8;
+    color: #4b5b72;
+}
+
+.top nav button.active {
+    background: #2563eb;
+    color: white;
+}
+
+/* Main layout */
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 24px 18px 50px;
+}
+
+.page {
+    animation: fade .15s ease;
+}
+
+@keyframes fade {
+    from {
+        opacity: .7;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border: 1px solid #e6ebf1;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 6px 18px #15223808;
+}
+
+/* Authentication */
+.auth {
+    max-width: 460px;
+    margin: 40px auto;
+}
+
+.tabs {
+    display: flex;
+    background: #f1f5f9;
+    padding: 5px;
+    border-radius: 13px;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    flex: 1;
+    background: transparent;
+}
+
+.tabs button.active {
+    background: white;
+    box-shadow: 0 2px 8px #0001;
+}
+
+/* Forms */
+label {
+    display: block;
+    font-weight: 700;
+    margin: 12px 0;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    background: #fff;
+    margin-top: 6px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px #3b82f61c;
+}
+
+/* Buttons */
+.primary {
+    background: #2563eb;
+    color: white;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.ghost {
+    background: #edf2f7;
+    color: #334155;
+}
+
+/* Messages */
+.msg {
+    min-height: 20px;
+    color: #b42318;
+    font-weight: 700;
+}
+
+.msg.ok {
+    color: #15803d;
+}
+
+/* Rows */
+.row {
+    display: flex;
+    gap: 12px;
+}
+
+.row > * {
+    flex: 1;
+}
+
+/* Welcome section */
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.welcome h2 {
+    margin: 0;
+    font-family: 'Baloo 2';
+}
+
+.welcome p {
+    color: #64748b;
+    margin: 4px 0;
+}
+
+/* Student layout */
+.layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 350px;
+    gap: 22px;
+    align-items: start;
+}
+
+/* Menu */
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+    gap: 12px;
+}
+
+.item {
+    background: white;
+    border: 1px solid #e5eaf1;
+    border-radius: 16px;
+    padding: 15px;
+    text-align: center;
+}
+
+.item .emoji {
+    font-size: 36px;
+    min-height: 48px;
+}
+
+.item h4 {
+    margin: 6px 0;
+}
+
+.price {
+    font-weight: 900;
+    color: #2563eb;
+}
+
+.item.out {
+    opacity: .55;
+}
+
+.badge {
+    display: block;
+    color: #b91c1c;
+    font-weight: 900;
+    margin-top: 8px;
+}
+
+/* Quantity controls */
+.stepper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.stepper button {
+    background: #eaf1ff;
+    color: #2563eb;
+    font-size: 20px;
+    min-width: 36px;
+    padding: 5px;
+}
+
+/* Cart */
+.cart {
+    position: sticky;
+    top: 15px;
+}
+
+.cart h3 {
+    margin-top: 0;
+}
+
+.cartline {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #edf1f5;
+}
+
+.empty {
+    color: #7b8797;
+    font-size: 14px;
+}
+
+/* Payment */
+.pay {
+    border: 1px solid #e1e8f0;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 14px 0;
+}
+
+.pay legend {
+    font-weight: 900;
+}
+
+.radio {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.radio input {
+    width: auto;
+    margin: 0;
+}
+
+.gcash img {
+    width: 180px;
+    max-width: 100%;
+    display: block;
+    margin: 10px auto;
+}
+
+.qrmissing {
+    background: #fff8e8;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.proof-preview img {
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+/* Total */
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e7edf3;
+    padding-top: 14px;
+    font-size: 18px;
+}
+
+.total strong {
+    font-size: 24px;
+}
+
+/* Orders */
+.order {
+    background: #fff;
+    border: 1px solid #e3e9f0;
+    border-radius: 15px;
+    padding: 16px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.order h4 {
+    margin: 0 0 8px;
+}
+
+.order p {
+    margin: 5px 0;
+    color: #556274;
+}
+
+/* Status labels */
+.status,
+.pay {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 900;
+    border-radius: 999px;
+    padding: 6px 10px;
+    background: #eef2ff;
+    color: #3949ab;
+}
+
+.status.Ready {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status.Picked {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.pay.due {
+    background: #fff3cd;
+    color: #8a5700;
+}
+
+.pay.paid {
+    background: #dcfce7;
+    color: #166534;
+}
+
+/* Staff actions */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.actions button {
+    padding: 8px 12px;
+    background: #2563eb;
+    color: white;
+}
+
+.actions button.cash {
+    background: #16a34a;
+}
+
+/* Dashboard statistics */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.stats .card h3 {
+    font-size: 25px;
+    margin: 0;
+}
+
+.stats .card p {
+    margin: 4px 0;
+    color: #64748b;
+}
+
+/* Calendar */
+.calendar-filter {
+    margin: 12px 0;
+}
+
+.calendar-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.calendar-controls input {
+    max-width: 240px;
+}
+
+/* Staff header */
+.staff-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.range {
+    max-width: 280px;
+}
+
+.staff-head h2 {
+    font-family: 'Baloo 2';
+}
+
+/* Sales chips */
+.chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.chips span {
+    background: #eaf0f8;
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* Sales table */
+.tablewrap {
+    overflow: auto;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e5eaf1;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 720px;
+}
+
+th,
+td {
+    padding: 11px;
+    border-bottom: 1px solid #e9eef4;
+    text-align: left;
+    font-size: 13px;
+}
+
+th {
+    background: #f7f9fc;
+}
+
+td small {
+    color: #7b8797;
+}
+
+/* Food availability */
+.avail {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+}
+
+.avail label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border: 1px solid #e4eaf0;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 0;
+}
+
+.avail input {
+    width: auto;
+    margin: 0;
+}
+
+/* GCash verification */
+.verify {
+    background: #fff8e9;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 12px 0;
+}
+
+.verify .proof-preview {
+    margin: 8px 0;
+}
+
+.verify .proof-preview img {
+    max-width: 280px;
+}
+
+.verify input {
+    max-width: 160px;
+}
+
+.verify button {
+    background: #16a34a;
+    color: white;
+    margin: 8px 0;
+}
+
+.verify a {
+    display: inline-block;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #8792a1;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cart {
+        position: static;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    main {
+        padding: 16px 12px;
+    }
+
+    .top {
+        padding: 12px;
+    }
+
+    .brand h1 {
+        font-size: 23px;
+    }
+
+    .row {
+        display: block;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome {
+        align-items: flex-start;
+    }
+
+    .order {
+        display: block;
+    }
+
+    .actions {
+        align-items: flex-start;
+        margin-top: 12px;
+    }
+
+    .calendar-controls {
+        display: block;
+    }
+
+    .calendar-controls button {
+        margin-top: 8px;
+    }
+}
